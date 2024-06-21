@@ -2,7 +2,7 @@
 #include <cmath>
 #include <string>
 
-//TRIGONOMETRY CALCULATOR, Programma "Foxacid", Project TAIHOKU, Ob'iekt 004, June 16 2024
+//TRIGONOMETRY CALCULATOR, Programma "Foxacid", Project TAIHOKU, Ob'iekt 004A, June 16 2024
 //REPUBLIC OF CHINA
 
 //if (going to crash) {
