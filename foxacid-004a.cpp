@@ -11,6 +11,16 @@
 //  please don't;
 //}
 
+void positiv_und_negativ(float x) {
+    using namespace std;
+    if (x < 0) {
+        cout << " -";
+    }
+    else if (x > 0) {
+        cout << " + ";
+    }
+}
+
 //MAIN FUNCTION
 int main() {
     const double PI = 3.1415926535897932384626433832795028841971693993751058209;
@@ -28,7 +38,7 @@ int main() {
     float mode_3_imput_fn_a, mode_3_imput_fn_b, mode_3_imput_fn_c, mode_3_imput_fn_d;
 //MODE 4 CODE SECTOR
     float m4im_fx1, m4im_fx2, m4im_block_size_rhs, m4im_block_size_1_rhs, m4im_block_size_2_rhs, m4im_block_size_lhs, m4im_block_size_1_lhs, m4im_block_size_2_lhs;
-    float holydogshit_lhs, holydogshit_rhs, holydogshit_output_lhs, holydogshit_output_rhs, m4im_block_size_1_lhs_1, m4im_block_size_1_rhs_1, m4_cr_0, m4_cr_1, m4_cr_2, m4_cr_3, m4_cr_a, m4_cr_b, m4_cr_c;
+    float holydogshit_lhs, holydogshit_rhs, holydogshit_output_lhs, holydogshit_output_rhs, m4im_block_size_1_lhs_1, m4im_block_size_1_rhs_1, m4_cr_0, m4_cr_1, m4_cr_2, m4_cr_3, m4_cr_a, m4_cr_b, m4_cr_c, m4_cr_d;
     int   m4_1_im, m4_2_im, m4_2_im_side, m4_2_im_b, m4_2_im_s, m4_2_im_bs, m4_2_im_loop, methamphetamine, m4_3_im, zero;
 //VARIABLE =
     m4_cr_0 = 0;
@@ -38,6 +48,7 @@ int main() {
     m4_cr_a = 0;
     m4_cr_b = 3000;
     m4_cr_c = 0;
+    m4_cr_d = 0;
     m4_2_im_loop = 0;
     holydogshit_lhs = 3;                                                                                                                                        
     holydogshit_rhs = 3;
@@ -288,9 +299,11 @@ int main() {
         vector<float> mode_4_final_function_rhs_dx(         3000, 0);
         vector<float> mode_4_final_function_lhs_dy(         3000, 0);
         vector<float> mode_4_final_function_rhs_dy(         3000, 0);
-        vector<float> mode_4_final_function_all_dx(    30006006, 0);
-        vector<float> mode_4_final_function_all_dy(    30006006, 0);
-        vector<float> mode_4_final_function_all(       30006006, 0);
+        vector<float> mode_4_final_function_all_dx(     30006006, 0);
+        vector<float> mode_4_final_function_all_dy(     30006006, 0);
+        vector<float> mode_4_final_function_all(        30006006, 0);
+        vector<float> mode_4_final_function_length_dx(  30006006, 0);
+        vector<float> mode_4_final_function_length_dy(  30006006, 0);
         for (vector<float>::size_type i = 0; i < m4im_block_size_1_lhs;) {
             cout << "\u001b[32mLHS BLOCK " << i / 3 << "\u001b[32m, SEGMENT " << i % 3 + 1 << " \u001b[32m(CONSTANT)  : ";
             cin  >> mode_4_initial_function_lhs[i];
@@ -298,12 +311,12 @@ int main() {
             cin  >> mode_4_initial_function_lhs[i + 1];
             cout << "LHS BLOCK " << i / 3 << ", SEGMENT " << i % 3 + 3 << " (POWER OF Y): ";
             cin  >> mode_4_initial_function_lhs[i + 2];
-            mode_4_calculating_function_lhs[i]        = mode_4_initial_function_lhs[i];
-            mode_4_calculating_function_lhs[i + 1]    = mode_4_initial_function_lhs[i + 1];
-            mode_4_calculating_function_lhs[i + 2]    = mode_4_initial_function_lhs[i + 2];
-            mode_4_calculating_function_lhs_dy[i]     = mode_4_calculating_function_lhs[i];
-            mode_4_calculating_function_lhs_dy[i + 1] = mode_4_calculating_function_lhs[i + 1];
-            mode_4_calculating_function_lhs_dy[i + 2] = mode_4_calculating_function_lhs[i + 2];
+            mode_4_calculating_function_lhs[i]        = mode_4_initial_function_lhs[i]          ;
+            mode_4_calculating_function_lhs[i + 1]    = mode_4_initial_function_lhs[i + 1]      ;
+            mode_4_calculating_function_lhs[i + 2]    = mode_4_initial_function_lhs[i + 2]      ;
+            mode_4_calculating_function_lhs_dy[i]     = mode_4_calculating_function_lhs[i]      ;
+            mode_4_calculating_function_lhs_dy[i + 1] = mode_4_calculating_function_lhs[i + 1]  ;
+            mode_4_calculating_function_lhs_dy[i + 2] = mode_4_calculating_function_lhs[i + 2]  ;
             i = i + 3;
         }
         for (vector<float>::size_type i = 0; i < m4im_block_size_1_rhs;) {
@@ -313,12 +326,12 @@ int main() {
             cin  >> mode_4_initial_function_rhs[i + 1];
             cout << "RHS BLOCK " << i / 3 << ", SEGMENT " << i % 3 + 3 << " (POWER OF Y): ";
             cin  >> mode_4_initial_function_rhs[i + 2];
-            mode_4_calculating_function_rhs[i]        = mode_4_initial_function_rhs[i];
-            mode_4_calculating_function_rhs[i + 1]    = mode_4_initial_function_rhs[i + 1];
-            mode_4_calculating_function_rhs[i + 2]    = mode_4_initial_function_rhs[i + 2];
-            mode_4_calculating_function_rhs_dy[i]     = mode_4_calculating_function_rhs[i];
-            mode_4_calculating_function_rhs_dy[i + 1] = mode_4_calculating_function_rhs[i + 1];
-            mode_4_calculating_function_rhs_dy[i + 2] = mode_4_calculating_function_rhs[i + 2];
+            mode_4_calculating_function_rhs[i]        = mode_4_initial_function_rhs[i]          ;
+            mode_4_calculating_function_rhs[i + 1]    = mode_4_initial_function_rhs[i + 1]      ;
+            mode_4_calculating_function_rhs[i + 2]    = mode_4_initial_function_rhs[i + 2]      ;
+            mode_4_calculating_function_rhs_dy[i]     = mode_4_calculating_function_rhs[i]      ;
+            mode_4_calculating_function_rhs_dy[i + 1] = mode_4_calculating_function_rhs[i + 1]  ;
+            mode_4_calculating_function_rhs_dy[i + 2] = mode_4_calculating_function_rhs[i + 2]  ;
             i = i + 3;
         }
         cout << "SHOWING IMPUTED FUNCTIONS:\n"  ;
@@ -471,7 +484,7 @@ int main() {
             m4_cr_b = m4_cr_a + 3;
             while (m4_cr_b <= 2997) {
                 if (mode_4_final_function_rhs_dx[m4_cr_a + 1] == mode_4_final_function_rhs_dx[m4_cr_b + 1] && mode_4_final_function_rhs_dx[m4_cr_a + 2] == mode_4_final_function_rhs_dx[m4_cr_b + 2]) {
-                    mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b] = mode_4_final_function_rhs_dx[m4_cr_a] + mode_4_final_function_rhs_dx[m4_cr_b];
+                    mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b + 0] = mode_4_final_function_rhs_dx[m4_cr_a + 0] + mode_4_final_function_rhs_dx[m4_cr_b];
                     mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b + 1] = mode_4_final_function_rhs_dx[m4_cr_b + 1];
                     mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b + 2] = mode_4_final_function_rhs_dx[m4_cr_b + 2];
                     mode_4_final_function_rhs_dx[m4_cr_b] = 0;
@@ -487,19 +500,23 @@ int main() {
         while (m4_cr_a <= 2997 && m4_cr_b <= 3000) {
             m4_cr_b = m4_cr_a + 3;
             while (m4_cr_b <= 2997) {
-                if (mode_4_final_function_rhs_dx[m4_cr_a + 1] != mode_4_final_function_rhs_dx[m4_cr_b + 1] || mode_4_final_function_rhs_dx[m4_cr_a + 2] != mode_4_final_function_rhs_dx[m4_cr_b + 2]) { //LINE ERROR ?LOGICAL
-                    if (mode_4_final_function_rhs_dx[m4_cr_a] != 0 || mode_4_final_function_rhs_dx[m4_cr_b] != 0) {
-                        mode_4_final_function_all_dx[3003 + m4_cr_a * 10000 + m4_cr_b] = mode_4_final_function_rhs_dx[m4_cr_b];
-                        mode_4_final_function_all_dx[3003 + m4_cr_a * 10000 + m4_cr_b + 1] = mode_4_final_function_rhs_dx[m4_cr_b + 1];
-                        mode_4_final_function_all_dx[3003 + m4_cr_a * 10000 + m4_cr_b + 2] = mode_4_final_function_rhs_dx[m4_cr_b + 2];
-                        mode_4_final_function_all_dx[3003 + m4_cr_a * 10000] = mode_4_final_function_rhs_dx[m4_cr_a];
-                        mode_4_final_function_all_dx[3003 + m4_cr_a * 10000 + 1] = mode_4_final_function_rhs_dx[m4_cr_a + 1];
-                        mode_4_final_function_all_dx[3003 + m4_cr_a * 10000 + 2] = mode_4_final_function_rhs_dx[m4_cr_a + 2];
-                        m4_cr_b = m4_cr_b + 3;
+                if (mode_4_final_function_rhs_dx[m4_cr_a + 1] != mode_4_final_function_rhs_dx[m4_cr_b + 1] || mode_4_final_function_rhs_dx[m4_cr_a + 2] != mode_4_final_function_rhs_dx[m4_cr_b + 2]) {
+                    while (mode_4_final_function_rhs_dx[m4_cr_a] != 0) {
+                        mode_4_final_function_all_dx[m4_cr_a * 10000 + 3003] = mode_4_final_function_rhs_dx[m4_cr_a + 0];
+                        mode_4_final_function_all_dx[m4_cr_a * 10000 + 3004] = mode_4_final_function_rhs_dx[m4_cr_a + 1];
+                        mode_4_final_function_all_dx[m4_cr_a * 10000 + 3005] = mode_4_final_function_rhs_dx[m4_cr_a + 2];
+                        break;
                     }
-                    else {
-                        m4_cr_b = m4_cr_b + 3;
+                    while (mode_4_final_function_rhs_dx[m4_cr_b] != 0) {
+                        mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b + 3003] = mode_4_final_function_rhs_dx[m4_cr_b + 0];
+                        mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b + 3004] = mode_4_final_function_rhs_dx[m4_cr_b + 1];
+                        mode_4_final_function_all_dx[m4_cr_a * 10000 + m4_cr_b + 3005] = mode_4_final_function_rhs_dx[m4_cr_b + 2];
+                        break;
                     }
+                    m4_cr_b = m4_cr_b + 3;
+                }
+                else {
+                    m4_cr_b = m4_cr_b + 3;
                 }
             } 
             m4_cr_a = m4_cr_a + 3;
@@ -509,7 +526,7 @@ int main() {
             m4_cr_b = m4_cr_a + 3;
             while (m4_cr_b <= 2997) {
                 if (mode_4_final_function_lhs_dy[m4_cr_a + 1] == mode_4_final_function_lhs_dy[m4_cr_b + 1] && mode_4_final_function_lhs_dy[m4_cr_a + 2] == mode_4_final_function_lhs_dy[m4_cr_b + 2]) {
-                    mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b] = mode_4_final_function_lhs_dy[m4_cr_a] + mode_4_final_function_lhs_dy[m4_cr_b];
+                    mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b + 0] = mode_4_final_function_lhs_dy[m4_cr_a + 0] + mode_4_final_function_lhs_dy[m4_cr_b];
                     mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b + 1] = mode_4_final_function_lhs_dy[m4_cr_b + 1];
                     mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b + 2] = mode_4_final_function_lhs_dy[m4_cr_b + 2];
                     mode_4_final_function_lhs_dy[m4_cr_b] = 0;
@@ -526,23 +543,27 @@ int main() {
             m4_cr_b = m4_cr_a + 3;
             while (m4_cr_b <= 2997) {
                 if (mode_4_final_function_lhs_dy[m4_cr_a + 1] != mode_4_final_function_lhs_dy[m4_cr_b + 1] || mode_4_final_function_lhs_dy[m4_cr_a + 2] != mode_4_final_function_lhs_dy[m4_cr_b + 2]) {
-                    if (mode_4_final_function_lhs_dy[m4_cr_b] != 0) {
-                        mode_4_final_function_all_dy[3003 + m4_cr_a * 10000 + m4_cr_b] = mode_4_final_function_lhs_dy[m4_cr_b];
-                        mode_4_final_function_all_dy[3003 + m4_cr_a * 10000 + m4_cr_b + 1] = mode_4_final_function_lhs_dy[m4_cr_b + 1];
-                        mode_4_final_function_all_dy[3003 + m4_cr_a * 10000 + m4_cr_b + 2] = mode_4_final_function_lhs_dy[m4_cr_b + 2];
-                        mode_4_final_function_all_dy[3003 + m4_cr_a * 10000] = mode_4_final_function_lhs_dy[m4_cr_a];
-                        mode_4_final_function_all_dy[3003 + m4_cr_a * 10000 + 1] = mode_4_final_function_lhs_dy[m4_cr_a + 1];
-                        mode_4_final_function_all_dy[3003 + m4_cr_a * 10000 + 2] = mode_4_final_function_lhs_dy[m4_cr_a + 2];
-                        m4_cr_b = m4_cr_b + 3;
+                    while (mode_4_final_function_lhs_dy[m4_cr_a] != 0) {
+                        mode_4_final_function_all_dy[m4_cr_a * 10000 + 3003] = mode_4_final_function_lhs_dy[m4_cr_a + 0];
+                        mode_4_final_function_all_dy[m4_cr_a * 10000 + 3004] = mode_4_final_function_lhs_dy[m4_cr_a + 1];
+                        mode_4_final_function_all_dy[m4_cr_a * 10000 + 3005] = mode_4_final_function_lhs_dy[m4_cr_a + 2];
+                        break;
                     }
-                    else {
-                        m4_cr_b = m4_cr_b + 3;
+                    while (mode_4_final_function_lhs_dy[m4_cr_b] != 0) {
+                        mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b + 3003] = mode_4_final_function_lhs_dy[m4_cr_b + 0];
+                        mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b + 3004] = mode_4_final_function_lhs_dy[m4_cr_b + 1];
+                        mode_4_final_function_all_dy[m4_cr_a * 10000 + m4_cr_b + 3005] = mode_4_final_function_lhs_dy[m4_cr_b + 2];
+                        break;
                     }
+                    m4_cr_b = m4_cr_b + 3;
+                }
+                else {
+                    m4_cr_b = m4_cr_b + 3;
                 }
             } 
             m4_cr_a = m4_cr_a + 3;
         }
-        while (m4_cr_c <= 30002997) {
+        while (m4_cr_c <= 30006000 && m4_cr_d < 300) {
             m4_cr_c = 0;
             while (mode_4_final_function_all_dx[m4_cr_c] == 0) {
                 m4_cr_c = m4_cr_c + 3;
@@ -558,30 +579,91 @@ int main() {
                 var_int_h = (mode_4_final_function_all_dx[m4_cr_c + 2] - var_int_e * 1000 - var_int_f * 100 - var_int_g * 10);
                 while (var_int_a > 0) {
                     cout << mode_4_final_function_all_dx[m4_cr_c] << "x" << small_numbers[var_int_a] << small_numbers[var_int_b] << small_numbers[var_int_c] << small_numbers[var_int_d];
+                    break;
                 }
                 while (var_int_a == 0 && var_int_b > 0) {
                     cout << mode_4_final_function_all_dx[m4_cr_c] << "x" << small_numbers[var_int_b] << small_numbers[var_int_c] << small_numbers[var_int_d];
+                    break;
                 }
                 while (var_int_a == 0 && var_int_b == 0 && var_int_c > 0) {
                     cout << mode_4_final_function_all_dx[m4_cr_c] << "x" << small_numbers[var_int_c] << small_numbers[var_int_d];
+                    break;
                 }
                 while (var_int_a == 0 && var_int_b == 0 && var_int_c == 0 && var_int_d > 0) {
                     cout << mode_4_final_function_all_dx[m4_cr_c] << "x" << small_numbers[var_int_d];
+                    break;
                 }
                 while (var_int_e > 0) {
                     cout << "y" << small_numbers[var_int_e] << small_numbers[var_int_f] << small_numbers[var_int_g] << small_numbers[var_int_h] << " + ";
+                    break;
                 }
                 while (var_int_e == 0 && var_int_f > 0) {
                     cout << "y" << small_numbers[var_int_f] << small_numbers[var_int_g] << small_numbers[var_int_h] << " + ";
+                    break;
                 }
                 while (var_int_e == 0 && var_int_f == 0 && var_int_g > 0) {
                     cout << "y" << small_numbers[var_int_g] << small_numbers[var_int_h] << " + ";
+                    break;
                 }
                 while (var_int_e == 0 && var_int_f == 0 && var_int_g == 0 && var_int_h > 0) {
                     cout << "y" << small_numbers[var_int_h] << " + ";
+                    break;
                 }
                 m4_cr_c = m4_cr_c + 3;
             }
+            m4_cr_d = m4_cr_d + 3;
+        } //CURRENTLY DOES NOT SHOW THE SECOND OUTPUT ON dx and dy
+        cout << "\n" << "------\n";
+        m4_cr_c = 0;
+        while (m4_cr_c <= 30006000) {
+            m4_cr_c = 0;
+            while (mode_4_final_function_all_dy[m4_cr_c] == 0) {
+                m4_cr_c = m4_cr_c + 3;
+            }
+            while (mode_4_final_function_all_dy[m4_cr_c] != 0) {
+                var_int_a = (mode_4_final_function_all_dy[m4_cr_c + 1]) / 1000;
+                var_int_b = (mode_4_final_function_all_dy[m4_cr_c + 1] - var_int_a * 1000) / 100;
+                var_int_c = (mode_4_final_function_all_dy[m4_cr_c + 1] - var_int_a * 1000 - var_int_b * 100) / 10;
+                var_int_d = (mode_4_final_function_all_dy[m4_cr_c + 1] - var_int_a * 1000 - var_int_b * 100 - var_int_c * 10);
+                var_int_e = (mode_4_final_function_all_dy[m4_cr_c + 2]) / 1000;
+                var_int_f = (mode_4_final_function_all_dy[m4_cr_c + 2] - var_int_e * 1000) / 100;
+                var_int_g = (mode_4_final_function_all_dy[m4_cr_c + 2] - var_int_e * 1000 - var_int_f * 100) / 10;
+                var_int_h = (mode_4_final_function_all_dy[m4_cr_c + 2] - var_int_e * 1000 - var_int_f * 100 - var_int_g * 10);
+                while (var_int_a > 0) {
+                    cout << mode_4_final_function_all_dy[m4_cr_c] << "x" << small_numbers[var_int_a] << small_numbers[var_int_b] << small_numbers[var_int_c] << small_numbers[var_int_d];
+                    break;
+                }
+                while (var_int_a == 0 && var_int_b > 0) {
+                    cout << mode_4_final_function_all_dy[m4_cr_c] << "x" << small_numbers[var_int_b] << small_numbers[var_int_c] << small_numbers[var_int_d];
+                    break;
+                }
+                while (var_int_a == 0 && var_int_b == 0 && var_int_c > 0) {
+                    cout << mode_4_final_function_all_dy[m4_cr_c] << "x" << small_numbers[var_int_c] << small_numbers[var_int_d];
+                    break;
+                }
+                while (var_int_a == 0 && var_int_b == 0 && var_int_c == 0 && var_int_d > 0) {
+                    cout << mode_4_final_function_all_dy[m4_cr_c] << "x" << small_numbers[var_int_d];
+                    break;
+                }
+                while (var_int_e > 0) {
+                    cout << "y" << small_numbers[var_int_e] << small_numbers[var_int_f] << small_numbers[var_int_g] << small_numbers[var_int_h] << " + ";
+                    break;
+                }
+                while (var_int_e == 0 && var_int_f > 0) {
+                    cout << "y" << small_numbers[var_int_f] << small_numbers[var_int_g] << small_numbers[var_int_h] << " + ";
+                    break;
+                }
+                while (var_int_e == 0 && var_int_f == 0 && var_int_g > 0) {
+                    cout << "y" << small_numbers[var_int_g] << small_numbers[var_int_h] << " + ";
+                    break;
+                }
+                while (var_int_e == 0 && var_int_f == 0 && var_int_g == 0 && var_int_h > 0) {
+                    cout << "y" << small_numbers[var_int_h] << " + ";
+                    break;
+                }
+                m4_cr_c = m4_cr_c + 3;
+            }
+            break;
         }
     }
 }
