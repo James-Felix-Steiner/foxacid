@@ -15,8 +15,8 @@ int main() {
     cin >> vald;
     if (amt < 1500) {
         cout << "投注" << amt << "元，賭" << vala << "號馬贏。\n";
-        int N = 6; 
-        int i = 0;
+        int N = 7; 
+        int i = 1;
         while (i < vald) {
             for (int i = 1; i < vald + 1; i++)
             valb = rand() % N;
@@ -26,12 +26,12 @@ int main() {
     }
     while (amt >= 1500) {
         cout << "投注" << amt << "元，賭" << vala << "號馬贏。\n";
-        int N = 6; 
+        int N = 7; 
         for (int i = 1; i < vald + 2; i++)
         valb = rand() % N;
-        int j = 0;
+        int j = 1;
         while (j < vald) {
-            int i = 0;
+            int i = 1;
             for (int i = 1; i < vald + 1; i++)
             valb = rand() % N;
             while (vala != valb) {
